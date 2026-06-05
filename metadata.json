@@ -1,0 +1,6 @@
+{
+  "name": "Tepi.Co Mini Donut Bar",
+  "description": "Premium Malaysian interactive mini donut bar service for weddings, birthdays, office events & private celebrations in KL & Selangor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
