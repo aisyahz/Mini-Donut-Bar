@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { WoodenBoothHero } from "./components/WoodenBoothHero";
 import { HowItWorks } from "./components/HowItWorks";
+import { WoodenBoothShowcase } from "./components/WoodenBoothShowcase";
 import { MenuSection } from "./components/MenuSection";
 import { PackagesSection } from "./components/PackagesSection";
 import { FrozenSupplierSection } from "./components/FrozenSupplierSection";
@@ -104,96 +105,7 @@ export default function App() {
       <HowItWorks />
 
       {/* 4. EXCLUSIVE WOODEN BOOTH HIGHLIGHT SECTION */}
-      <section id="booth-highlight" className="py-20 px-4 md:px-12 bg-white border-b border-[#E5E1D8]">
-        <div className="max-w-7xl mx-auto">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Side: Booth Characteristics Grid */}
-            <div className="lg:col-span-6 space-y-6">
-              <div>
-                <span className="text-xs uppercase tracking-[0.25em] font-extrabold text-[#8B5E3C] bg-[#8B5E3C]/10 px-3.5 py-1.5 rounded-full inline-block mb-3">
-                  Aesthetic Presentation
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#3C2F2F]">
-                  Designed to Elevate Your Venue Styling
-                </h2>
-                <div className="w-20 h-0.5 bg-[#8B5E3C]/30 mt-3" />
-              </div>
-
-              <p className="text-[#3C2F2F]/80 text-sm sm:text-base leading-relaxed">
-                At Tepi.Co, we believe a dessert table should never look plain or industrialized. Our original, handcrafted **solid pine wood bar stand** immediately warm-ups the event visual canvas, turning simple mini donuts into a central engagement spot.
-              </p>
-
-              {/* List of custom luxury setup details */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {siteContent.aboutBooth.features.map((feat, idx) => (
-                  <div key={idx} className="flex gap-2.5 items-start">
-                    <div className="w-5 h-5 rounded-full bg-[#FAF7F2] text-xs font-bold text-[#8B5E3C] flex items-center justify-center mt-1 scale-95 border border-[#E5E1D8]">
-                      ★
-                    </div>
-                    <span className="text-xs sm:text-sm text-[#3C2F2F]/90 font-medium">{feat}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Micro client quotes */}
-              <div className="bg-[#FAF7F2] p-5 rounded-2xl border border-[#E5E1D8] flex gap-3 italic text-xs text-gray-600 font-serif leading-relaxed relative">
-                <Quote className="w-8 h-8 text-[#8B5E3C]/20 flex-shrink-0 absolute -top-3 left-4 scale-125" />
-                <div className="pl-6 pt-1">
-                  “Everyone was taking photos around the pine wood dessert booth! The warm candle highlights and botanical garland matches our boho wedding theme perfectly.”
-                  <span className="block mt-1 font-sans font-bold text-[10px] uppercase text-[#8B5E3C] not-italic tracking-wider">— Aliah & Mir, Groom & Bride, Selangor</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side: Interactive layout showcasing booth components and hotspots */}
-            <div className="lg:col-span-6 flex justify-center">
-              <div className="w-full max-w-[520px] bg-[#FAF7F2]/60 rounded-3xl p-6 border border-[#E5E1D8]/80 space-y-6">
-                
-                <h3 className="text-lg font-serif font-bold text-[#3C2F2F] text-center mb-2 flex items-center justify-center gap-1.5">
-                  <span>Interactive Booth Layout Breakdown</span>
-                  <Sparkles className="w-4 h-4 text-[#8B5E3C]" />
-                </h3>
-
-                {/* Hotspots stack */}
-                <div className="space-y-3.5">
-                  {[
-                    { title: "Wooden Display Pegboard Rack", desc: "Solid timber board that elegantly showcases fresh fluffy golden mini donut bases in high-fidelity stacks. Guests pick directly from here.", tag: "Interactive Area" },
-                    { title: "Clay Sauce Dippers & Bottles", desc: "Bespoke terracotta bowls and food-grade squeeze bottles for drip decorations. Keeps chocolate smooth and hygienic.", tag: "Custom Stations" },
-                    { title: "Apothecary Topping Glass Elements", desc: "Aesthetic glass jars loaded with Lotus Biscoff, crumbs, and sprinkles. Highlights look like traditional premium confectionery.", tag: "Glassware Styling" },
-                    { title: "Florist Garland & Glow Highlights", desc: "Fresh eucalyptus stalks paired with romantic candle lantern blurs. Blends effortlessly into modern garden or hall styling.", tag: "Boho Touch" }
-                  ].map((hot, idx) => (
-                    <motion.div 
-                      key={idx}
-                      whileHover={{ scale: 1.02, x: 4 }}
-                      className="bg-white p-4 rounded-2xl border border-[#E5E1D8] shadow-3xs flex gap-3 items-start cursor-pointer group"
-                    >
-                      <div className="w-7 h-7 rounded-lg bg-[#5A5A40]/10 text-[#5A5A40] flex items-center justify-center text-xs font-bold font-mono">
-                        0{idx + 1}
-                      </div>
-                      <div className="space-y-1">
-                        <div className="flex justify-between items-center flex-wrap">
-                          <h4 className="font-serif font-bold text-sm text-[#3C2F2F] group-hover:text-[#8B5E3C] transition-colors">{hot.title}</h4>
-                          <span className="text-[8px] bg-amber-500/10 text-amber-700 px-2 rounded font-mono font-bold uppercase">{hot.tag}</span>
-                        </div>
-                        <p className="text-xs text-gray-500 leading-snug">{hot.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <div className="text-center font-serif text-xs italic text-[#5A5A40] flex items-center justify-center gap-1.5">
-                  <span>✨ 100% Mobile & Setup-Ready across KL & Selangor Valley</span>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+      <WoodenBoothShowcase />
 
       {/* 5. SAUCE & TOPPING SHOWCASE MENU */}
       <MenuSection />
